@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Forge.OpenAI</id>
+    <version>1.5.5</version>
+    <title>Forge OpenAI, ChatGPT API for .NET clients</title>
+    <authors>Zoltan Juhasz</authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Forge.OpenAI.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://openai.com/</projectUrl>
+    <description>OpenAI C# / .NET library, using GPT-4, 3.5 and 3, DALL-E 3, DALL-E 2, Whisper, etc. It supports OpenAI and Azure-OpenAI APIs, dependency injections. Developed for public and free usage.</description>
+    <releaseNotes>v1.5.5 - Added properties to the RunResponseBase class
+			v1.5.4 - Added Includes property to the RunStepsListRequest class, added new models (o1-preview, o1-mini)
+			v1.5.3 - Added some new properties to the ChatCompletionRequest class, added new models
+			v1.5.2 - Fixing JsonlManager.Load in .NET 4.x, where the null value is not allowed for the StreamReader
+			v1.5.1 - Fixing JsonlManager.Save in .NET 4.x, where the null value is not allowed for the StreamWriter
+			v1.5.0 - Batch, run async calls support, vector store, vectore store files, vector store file batch supported now. ChatCompletion stream options issue fixed, FuneTuningJob API changes implemented, FineTuningJob checkpoints support implemented
+			v1.4.11 - ChatCompletion ChatMessage constructor issue fixed
+			v1.4.10 - ChatCompletion ChatMessage missing JsonConstructor
+			v1.4.9 - ChatCompletionRequest changes implemented, MessageContent class added to ChatMessage class
+			v1.4.8 - GPT-4o model added, following changes in OpenAI API, added missing properties, new models
+			v1.4.7 - Messages also can be a list of MessageContent, not just a string
+			v1.4.6 - Thread message content now can be a list of MessageContent, not just a string
+			v1.4.5 - Fix typo in known model type "Gpr_4_turbo"
+			v1.4.4 - Improved service factory methods and Playground examples
+			v1.4.3 - Improved service factory methods
+			v1.4.2 - Fix issues
+			v1.4.1 - Fix issue in MessageResponseBase, duplicated status field and wrong "incomplete_details" field. Constants updated in Tool class.
+			v1.4.0 - New models, properties, bugfixes, supporting v2 of assistant, run, messages, threads
+			v1.3.8 - Configurable assistant header values, bugfixes
+			v1.3.7 - Following changes in OpenAI API, added missing properties, new models
+			v1.3.6 - Added missing properties to RunResponse class
+			v1.3.5 - Fixed an URL issue in RunService class
+			v1.3.4 - Fixed a bug when OpenAIService created manually
+			v1.3.3 - Following changes in OpenAI API, addition header data included into the requests, fixed
+			v1.3.2 - OpenAIService class second constructor does not initialize RunService and RunStepService services, fixed
+			v1.3.1 - ChatTool invalid function data type bug fixed
+			v1.3.0 - Assistant, threads, messages and run API (beta) support, bugfixes
+			v1.2.0 - FineTuning Job API support, existing APIs updated to the latest versions
+			v1.1.7 - .NET 8 support and a fix for the ImageService, ImageEditRequest issue, https://github.com/JZO001/Forge.OpenAI/pull/3
+			v1.1.6 - Usage is always null bug fixed in ChatCompletionResponse and TextEditResponse
+			v1.1.5 - Name field for the chat message. PromptLossWeight field of FineTuneCreateRequest is not mandatory (nullable). Azure endpoint default API version changed.
+			v1.1.4 - Added support for IHttpClientFactory. Now short-lived, long-lived and custom HttpClient instances can be used. Last one is useful for MAUI Android clients.
+			v1.1.3 - Added optimizations for .NET 7</releaseNotes>
+    <tags>OpenAI, Azure-OpenAI, Azure-OpenAI-API, ChatGPT, GPT4, GPT-4, GPT-4-API, GPT35, GPT-35, GPT-35-API, GPT3, GPT-3, GPT-3-API, DALLE, DALL-E, DALL-E-API, OpenAi, openAi, azure, assistant, threads, Whisper, AI, ML, dotnet, dotnetcore, machine-learning, sdk, forge, translation, transcription, chat, chatbot, image, image-processing, embedding, embedding-models, moderation, text-completion, fine-tune, dotNet, csharp</tags>
+    <repository type="git" url="https://github.com/JZO001/Forge.OpenAI" commit="89f8a59a2b2a177c4c19c41ac7c021f4323eb7c4" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="3.1.32" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="3.1.32" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net7.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="8.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="8.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="3.1.32" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Http" version="3.1.32" exclude="Build,Analyzers" />
+        <dependency id="System.Net.Http.Json" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework=".NETFramework4.6.1" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
